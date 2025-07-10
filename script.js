@@ -108,34 +108,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
-
-self.addEventListener("install", event => {
-    event.waitUntil(
-        caches.open("gcode-cache").then(caches => {
-            return caches.addAll([
-                '/',
-                '/index.html',
-                '/style.css',
-                '/script.js',
-                '/mainfest.json',
-                '/icon-192.png',
-                '/icon-512.png'
-            ]);
-        })
-    );
-});
-
-
-self.addEventListener("fetch",event => {
-    event.respondWith(
-        caches.match(event.request).then(response =>{
-            return response || fetch(event.request);
-        })
-    );
-});
-
 if ("serviceWorker" in navigator){
     navigator.serviceWorker.register("service-worker.js")
         .then(() => console.log('✅ Service Worker zarejestrowany'))
