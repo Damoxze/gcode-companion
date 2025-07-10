@@ -34,6 +34,7 @@ const gcodeDescriptions = {
   G92: "Ustaw aktualną pozycję jako zadaną",
   G94: "Prędkość posuwu w mm/min",
   G95: "Prędkość posuwu na obrót wrzeciona",
+  G97: "Pracuje ze stałymi obrotami wrzeciona (RPM) niezależnie od średnicy detalu.",
   G98: "Powrót do punktu początkowego po cyklu",
   G99: "Powrót do punktu R po cyklu",
   M0: "Zatrzymanie programu – pauza",
