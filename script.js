@@ -45,6 +45,7 @@ const gcodeDescriptions = {
   M6: "Zmiana narzędzia",
   M8: "Włącz chłodziwo",
   M9: "Wyłącz chłodziwo",
+  M19: "Pozycjonowanie wrzecona",
   M30: "Koniec programu i przewinięcie",
   M98: "Wywołanie podprogramu",
   M99: "Powrót z podprogramu / pętla"
