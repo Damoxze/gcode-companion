@@ -81,3 +81,25 @@ function interpretGcode() {
 
   document.getElementById("output").innerHTML = output;
 }
+
+
+
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('dark');
+
+  // Zapamiętaj preferencję
+  if (body.classList.contains('dark')) {
+    localStorage.setItem('darkMode', 'true');
+  } else {
+    localStorage.setItem('darkMode', 'false');
+  }
+}
+
+// Załaduj tryb ciemny przy starcie, jeśli był zapamiętany
+window.addEventListener('DOMContentLoaded', () => {
+  const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+  if (darkModeEnabled) {
+    document.body.classList.add('dark');
+  }
+});

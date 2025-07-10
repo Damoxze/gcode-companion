@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang=pl">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>G-Code Companion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>G-Code Companion</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>G-Code Companion</h1>
 
+  <h1>G-Code Companion</h1>
+  <button id="toggle-darkmode" onclick="toggleDarkMode()">🌙 Tryb ciemny</button>
 
-    <textarea id="gcode-input" placeholder="Wklej tutaj swój G-code..."></textarea>
-    <button onclick="interpretGcode()">Interpretuj</button>
-    
+  <textarea id="gcode-input" placeholder="Wklej tutaj swój G-code..."></textarea>
+  <button onclick="interpretGcode()">Interpretuj</button>
 
-    <div id="output"></div>
+  <div id="output"></div>
 
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
