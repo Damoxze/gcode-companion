@@ -46,6 +46,8 @@ const gcodeDescriptions = {
   M6: "Zmiana narzędzia",
   M8: "Włącz chłodziwo",
   M9: "Wyłącz chłodziwo",
+  M10: "Zamknięcie szczęk",
+  M11: "Otwarcie szczęk",
   M19: "Pozycjonowanie wrzecona",
   M30: "Koniec programu i przewinięcie",
   M98: "Wywołanie podprogramu",
@@ -105,3 +107,37 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dark');
   }
 });
+
+
+
+
+self.addEventListener("install", event => {
+    event.waitUntil(
+        caches.open("gcode-cache").then(caches => {
+            return caches.addAll([
+                '/',
+                '/index.html',
+                '/style.css',
+                '/script.js',
+                '/mainfest.json',
+                '/icon-192.png',
+                '/icon-512.png'
+            ]);
+        })
+    );
+});
+
+
+self.addEventListener("fetch",event => {
+    event.respondWith(
+        caches.match(event.request).then(response =>{
+            return response || fetch(event.request);
+        })
+    );
+});
+
+if ("serviceWorker" in navigator){
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log('✅ Service Worker zarejestrowany'))
+        .catch(err => console.log('❌ Błąd SW:', err));
+}

@@ -1,0 +1,21 @@
+{
+    "name": "G-Code Companion",
+    "short_name": "GCode",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#121212",
+    "theme_color": "#121212",
+    "discription": "Narzedzie do interpretacji G-Code i M-Code dla CNC",
+    "icons": [
+      {
+        "src": "icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }  
+    ]
+}
